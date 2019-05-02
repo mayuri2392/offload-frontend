@@ -1,12 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import App from './components/App';
+import Cart from './components/Cart';
+import BaseLayout from './components/BaseLayout';
+import Women from './components/Women';
+import Men from './components/Men';
+import Clothes from './components/Clothes';
+import Accessories from './components/Accessories';
+import ShowProduct from './components/ShowProduct';
+import registerServiceWorker from './registerServiceWorker';
+
+ReactDOM.render(
+  <BrowserRouter>
+    <BaseLayout>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/women" component={Women}  />
+        <Route path="/men" component={Men} />
+        <Route path="/clothes" component={Clothes}  />
+        <Route path="/accessories" component={Accessories} />
+        <Route exact path="/products/:id" component={ShowProduct} />
+      </Switch>
+    </BaseLayout>
+  </BrowserRouter>
+
+, document.getElementById('root'));
+registerServiceWorker();
