@@ -11,6 +11,9 @@ import BaseLayout from './components/BaseLayout';
 import Women from './components/Women';
 import Men from './components/Men';
 import Clothes from './components/Clothes';
+import Login from './components/users/login';
+import Register from './components/users/register';
+import Success from './components/users/success';
 import Accessories from './components/Accessories';
 import ShowProduct from './components/ShowProduct';
 import registerServiceWorker from './registerServiceWorker';
@@ -22,6 +25,9 @@ ReactDOM.render(
         <Route exact path="/" component={App} />
         <Route path="/cart" component={Cart} />
         <Route path="/women" component={Women}  />
+        <Route path="/users/login" component={Login}  />
+        <Route path="/users/register" component={Register}  />
+        <Route path="/users/success" component={Success}  />
         <Route path="/men" component={Men} />
         <Route path="/clothes" component={Clothes}  />
         <Route path="/accessories" component={Accessories} />
