@@ -15,7 +15,7 @@ class Accessories extends Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/products')
+    fetch('https://snapmytrendbackend.herokuapp.com/products')
       .then(response => response.json())
       .then(products => this.setState({ products }));
   }
